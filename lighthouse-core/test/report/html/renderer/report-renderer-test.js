@@ -137,10 +137,6 @@ describe('ReportRenderer', () => {
       const container = renderer._dom._document.body;
       const output = renderer.renderReport(warningResults, container);
 
-      var el = renderer._dom.createElement('div');
-      el.appendChild(output);
-      console.log(JSON.stringify(el));
-      console.log(el.querySelectorAll('.lh-run-warnings').length);
       const warningEls = output.querySelectorAll('.lh-run-warnings > ul > li');
       assert.strictEqual(warningEls.length, runWarnings.length);
       warningEls.forEach((warningEl, index) => {
